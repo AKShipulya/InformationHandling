@@ -1,10 +1,11 @@
 package com.epam.informationHandling.parser.impl;
 
 import com.epam.informationHandling.entity.Component;
-import com.epam.informationHandling.entity.Composite;
 import com.epam.informationHandling.parser.Parser;
 
 public class ParagraphParser extends AbstractTextParser {
+
+    private static final String REGEXP = "(?<=((\\.)|(!)|(\\?)))\\s+(?=[A-Z])";
 
     public ParagraphParser(Parser successor) {
         super(successor);
@@ -12,12 +13,6 @@ public class ParagraphParser extends AbstractTextParser {
 
     @Override
     public Component parse(String text) {
-        Component composite = new Composite();
-        String[] parts = text.split("[\\.\\|\\?\\|\\!]");
-        for (String part : parts) {
-            Component paragraph = getSuccessor().parse(part);
-            composite.add(paragraph);
-        }
-        return composite;
+        return templateParse(text, REGEXP);
     }
 }

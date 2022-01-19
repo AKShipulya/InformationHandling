@@ -1,10 +1,11 @@
 package com.epam.informationHandling.parser.impl;
 
 import com.epam.informationHandling.entity.Component;
-import com.epam.informationHandling.entity.Composite;
 import com.epam.informationHandling.parser.Parser;
 
 public class TextParser extends AbstractTextParser {
+
+    private static final String REGEXP = "\n";
 
     public TextParser(Parser successor) {
         super(successor);
@@ -12,12 +13,6 @@ public class TextParser extends AbstractTextParser {
 
     @Override
     public Component parse(String text) {
-        Component composite = new Composite();
-        String[] parts = text.split("\n");
-        for (String part : parts) {
-            Component paragraph = getSuccessor().parse(part);
-            composite.add(paragraph);
-        }
-        return composite;
+        return templateParse(text, REGEXP);
     }
 }
