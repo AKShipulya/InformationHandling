@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
-public class Lexeme implements Component{
+public class Lexeme implements Component {
     private static final Logger LOGGER = LogManager.getLogger();
 
     private final String lexeme;
@@ -40,11 +40,11 @@ public class Lexeme implements Component{
         if (object == null || getClass() != object.getClass()) {
             return false;
         }
-        Lexeme lexeme1 = (Lexeme) object;
-        if (lexeme != null ? !lexeme.equals(lexeme1.lexeme) : lexeme1.lexeme != null) {
+        Lexeme lexeme = (Lexeme) object;
+        if (this.lexeme != null ? !this.lexeme.equals(lexeme.lexeme) : lexeme.lexeme != null) {
             return false;
         }
-        return lexemeType == lexeme1.lexemeType;
+        return lexemeType == lexeme.lexemeType;
     }
 
     @Override
@@ -56,11 +56,11 @@ public class Lexeme implements Component{
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Lexeme{");
-        sb.append("lexeme='").append(lexeme).append('\'');
-        sb.append(", lexemeType=").append(lexemeType);
-        sb.append('}');
-        return sb.toString();
+        final StringBuilder stringBuilder = new StringBuilder("Lexeme{");
+        stringBuilder.append("lexeme='").append(lexeme).append('\'');
+        stringBuilder.append(", lexemeType=").append(lexemeType);
+        stringBuilder.append('}');
+        return stringBuilder.toString();
     }
 
     @Override

@@ -1,9 +1,13 @@
 package com.epam.informationHandling.entity;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Composite implements Component {
+    private static final Logger LOGGER = LogManager.getLogger();
 
     private final List<Component> components = new ArrayList<>();
 
@@ -49,9 +53,15 @@ public class Composite implements Component {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Composite{");
-        sb.append("components=").append(components);
-        sb.append('}');
-        return sb.toString();
+        final StringBuilder stringBuilder = new StringBuilder("Composite{");
+        stringBuilder.append("components=").append(components);
+        stringBuilder.append('}');
+        return stringBuilder.toString();
+    }
+
+    @Override
+    public String getLexeme() {
+        LOGGER.warn("Unsupported operation in class {}", this.getClass());
+        throw new UnsupportedOperationException("This operation is not supported in this Class" + this.getClass());
     }
 }

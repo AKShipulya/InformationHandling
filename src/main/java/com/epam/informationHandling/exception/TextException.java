@@ -1,6 +1,6 @@
 package com.epam.informationHandling.exception;
 
-public class TextException extends Exception{
+public class TextException extends Exception {
 
     public TextException() {
         super();

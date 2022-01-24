@@ -1,9 +1,8 @@
 package com.epam.informationHandling.parser;
 
-import com.epam.informationHandling.parser.Parser;
 import com.epam.informationHandling.parser.impl.ParagraphParser;
-import com.epam.informationHandling.parser.impl.TextParser;
 import com.epam.informationHandling.parser.impl.SentenceParser;
+import com.epam.informationHandling.parser.impl.TextParser;
 
 public class ParserBuilder {
 

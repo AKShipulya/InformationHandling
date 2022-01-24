@@ -1,6 +1,7 @@
 package com.epam.informationHandling.parser.impl;
 
 import com.epam.informationHandling.entity.Component;
+import com.epam.informationHandling.exception.TextException;
 import com.epam.informationHandling.parser.Parser;
 
 public class TextParser extends AbstractTextParser {
@@ -12,7 +13,7 @@ public class TextParser extends AbstractTextParser {
     }
 
     @Override
-    public Component parse(String text) {
+    public Component parse(String text) throws TextException {
         return templateParse(text, REGEXP);
     }
 }
