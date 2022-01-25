@@ -66,6 +66,6 @@ public class Lexeme implements Component {
     @Override
     public List<Component> getComponents() {
         LOGGER.warn("Unsupported operation in class {}", this.getClass());
-        throw new UnsupportedOperationException("This operation is not supported in this Class" + this.getClass());
+        throw new UnsupportedOperationException("This operation is not supported in this Class: " + this.getClass());
     }
 }

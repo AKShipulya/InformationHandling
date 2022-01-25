@@ -5,7 +5,6 @@ import com.epam.informationHandling.exception.TextException;
 import com.epam.informationHandling.parser.Parser;
 
 public class ParagraphParser extends AbstractTextParser {
-
     private static final String REGEXP = "(?<=((\\.)|(!)|(\\?)))\\s+(?=[A-Z])";
 
     public ParagraphParser(Parser successor) {

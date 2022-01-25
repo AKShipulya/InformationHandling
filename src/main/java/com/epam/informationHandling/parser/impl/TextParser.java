@@ -5,7 +5,6 @@ import com.epam.informationHandling.exception.TextException;
 import com.epam.informationHandling.parser.Parser;
 
 public class TextParser extends AbstractTextParser {
-
     private static final String REGEXP = "\n";
 
     public TextParser(Parser successor) {

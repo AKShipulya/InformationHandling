@@ -62,6 +62,6 @@ public class Composite implements Component {
     @Override
     public String getLexeme() {
         LOGGER.warn("Unsupported operation in class {}", this.getClass());
-        throw new UnsupportedOperationException("This operation is not supported in this Class" + this.getClass());
+        throw new UnsupportedOperationException("This operation is not supported in this Class: " + this.getClass());
     }
 }

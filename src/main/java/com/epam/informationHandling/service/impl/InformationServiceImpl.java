@@ -26,7 +26,7 @@ public class InformationServiceImpl implements InformationService {
         }
         return text.getComponents()
                 .stream()
-                .sorted(Comparator.comparing(word -> word.getLexeme()))
+                .sorted(Comparator.comparing(Component::getLexeme))
                 .collect(Collectors.toList());
     }
 
@@ -36,7 +36,7 @@ public class InformationServiceImpl implements InformationService {
         }
         return text.getComponents()
                 .stream()
-                .map(word -> word.getLexeme())
+                .map(Component::getLexeme)
                 .collect(Collectors.joining(" "));
     }
 }
