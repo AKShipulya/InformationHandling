@@ -18,7 +18,6 @@
 *.zip
 *.tar.gz
 *.rar
-pom.xml
 
 # virtual machine crash logs
 hs_err_pid*
